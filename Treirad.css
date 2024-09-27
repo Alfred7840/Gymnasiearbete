@@ -1,1 +1,17 @@
-hej
+body {background-color:#ffe4be ;
+margin:auto;
+
+}
+
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('/home/alfred/GymnasiumArbeiten/bubblegum/') format('woff2'),
+         url('/home/alfred/GymnasiumArbeiten/bubblegum/') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Bubblegum', sans-serif;
+}
