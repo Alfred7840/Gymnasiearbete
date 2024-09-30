@@ -6,8 +6,8 @@ margin:auto;
 
 @font-face {
     font-family: 'MyCustomFont';
-    src: url('/home/alfred/GymnasiumArbeiten/bubblegum/') format('woff2'),
-         url('/home/alfred/GymnasiumArbeiten/bubblegum/') format('woff');
+    src: url('/home/alfred/GymnasiumArbeiten/bubblegum/'),
+         url('/home/alfred/GymnasiumArbeiten/bubblegum/');
     font-weight: normal;
     font-style: normal;
 }
