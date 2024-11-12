@@ -2,6 +2,7 @@
 
 const ContainerEl = document.querySelector('.container');
 let playerTxt = document.querySelector('.message');
+let playerTxt2 = document.querySelector('.message_small');
 let restartBtn = document.getElementById('restartbtn');
 let boxes = document.querySelectorAll(".box");
 
@@ -33,7 +34,8 @@ function boxClicked(e) {
 
         // kolla om någon har vunnit
         if (playerHasWon() !== false) {
-            playerTxt.innerHTML = ` <h2 class="message"> Grattis Spelare ${currentPlayer}</h2> <p> Du har vunnit!`;
+            playerTxt.innerHTML = `<h2 class="message"> Grattis Spelare ${currentPlayer}</h2>`;
+            playerTxt2.innerHTML = '<p class = "message_small"> Du har vunnit!</p>';
             winnerIdicator = playerHasWon();
 
             winnerIdicator.map(
@@ -46,6 +48,7 @@ function boxClicked(e) {
         // Kontrollera om det är oavgjort (alla rutor fyllda, men ingen har vunnit)
         if (clickAmount === 9 && playerHasWon() === false) {
             playerTxt.innerHTML = "<h2 class='message'>Det blev oavgjort!</h2>";
+            playerTxt2.innerHTML = '<p class = "message_small">Ingen vann</p>';
             ContainerEl.classList.add('success');
         }
 

@@ -1,38 +1,3 @@
-/* body {
-background-color:#ffe4be ;
-margin:0;
-text-align:center;
-font-family:Arial, Helvetica, sans-serif;
-align-items: center;
-justify-content: center;
-display: grid;
-}
-
-
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: #5a15ca00;
-    padding: 80px;
-  }
-  .grid-item {
-    background-color: rgba(171, 206, 240, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
- }
-
- h1{
-border-color: black;
-border-width:1px;
-font-family: Verdana, Geneva, Tahoma, sans-serif;
- } 
-
-
-
- */
-
  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ruda:wght@400;600");
 
 * {
