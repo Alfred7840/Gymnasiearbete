@@ -70,28 +70,22 @@ function playerHasWon() {
     return false;
 }
 
+//starta om spelet
+restartBtn.addEventListener('click', restartGame);
+
+function restartGame(){
+    spaces.fill(null);
+
+    boxes.forEach((box) => {
+        box.innerHTML = "";
+        box.style.backgroundColor = ""
+    })
+
+    playerTxt.innerHTML = "Tre I Rad"
+    currentPlayer = X_TXT;
+    ContainerEl.classList.remove("success");
+}
 
 startGame();
-
-
-
-/*
-function playerHasWon() {
-    for(const condition of winingCombination) {
-        let[a,b,c] = condition;
-
-        if(spaces[a] && spaces[a] == spaces[b] && spaces[a] == spaces [c]){
-         return [a,b,c] 
-         
-    }
-    return false;
-}
-
-}
-
-*/
-
-
-
 
 //file:///home/alfred/Gymnasiearbete/index.html}
