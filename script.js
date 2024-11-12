@@ -32,7 +32,7 @@ function boxClicked(e){
 
         // vinst logik
         if (playerHasWon() !== false){
-            playerTxt.innerHTML = ` <h2 class="message"> Congratulation Player ${currentPlayer}</h2>`;
+            playerTxt.innerHTML = ` <h2 class="message"> Grattis Spelare ${currentPlayer}</h2>`;
             winnerIdicator = playerHasWon();
 
             winnerIdicator.map(
