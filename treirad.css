@@ -1,0 +1,152 @@
+/* body {
+background-color:#ffe4be ;
+margin:0;
+text-align:center;
+font-family:Arial, Helvetica, sans-serif;
+align-items: center;
+justify-content: center;
+display: grid;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #5a15ca00;
+    padding: 80px;
+  }
+  .grid-item {
+    background-color: rgba(171, 206, 240, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+ }
+
+ h1{
+border-color: black;
+border-width:1px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+ } 
+
+
+
+ */
+
+ @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ruda:wght@400;600");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --orangeColor: #f2c14e;
+  --darkColor: #2d414b;
+}
+
+body {
+  background: rgb(33, 49, 38);
+  background: radial-gradient(
+    circle,
+    rgb(76, 145, 76) 0%,
+    rgb(46, 109, 72) 55%,
+    rgb(0, 51, 21) 100%
+  );
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.container h1 {
+  font-size: 3.5rem;
+  color: #fff;
+}
+
+#gameboard {
+  width: 650px;
+  padding: 2rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  position: relative;
+}
+
+.box {
+  height: 130px;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orangeColor);
+  font-weight: 600;
+  font-size: 5.5rem;
+  margin: 0.5rem;
+  box-shadow: 2px 5px 5px #000;
+  border-radius: 5px;
+  background-color: var(--darkColor);
+}
+
+
+.container.success .box{
+cursor: not-allowed;
+}
+
+.modal {
+position: absolute;
+width: 650px;
+height: 400px;
+background-color: #fff;
+border-radius: 5px;
+box-shadow: 5px 10px 10px #000;
+opacity: 0;
+transform: translateX(500%);
+transition: all 0.8s ease-in;
+}
+
+.container.success .modal{
+  opacity: 1;
+  transform: translateY();
+}
+
+.content{
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+height: 100%
+}
+
+.content h2{
+  font-size: 2.5rem;
+}
+
+button{
+  outline: none;
+  border: none;
+  padding: 0.8rem 4rem;
+  margin-top: 2rem;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  width: 320px;
+  cursor: pointer;
+  background-color: var(--orangeColor);
+  color: var(--darkColor);
+  font-weight: 600;
+}
+
+button:active{
+  transform: scale(0.98);
+}
