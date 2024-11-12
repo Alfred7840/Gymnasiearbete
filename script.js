@@ -10,6 +10,7 @@ const X_TXT = "X"
 
 let currentPlayer = X_TXT;
 let spaces = Array(9).fill(null);
+let clickAmount = 0;
 
 let winnerIdicator = getComputedStyle(document.body).getPropertyValue(
     "--darkColor: ;"
@@ -21,30 +22,37 @@ const startGame = () => {
 };
 
 //box klickad
-function boxClicked(e){
-    const id = e.target.id;
-
+function boxClicked(e) {
+    const id = e.target.id; 
 
     // kolla id
-    if(!spaces[id]){
+    if (!spaces[id]) {
         spaces[id] = currentPlayer;
         e.target.innerText = currentPlayer;
+        clickAmount++;
 
-        // vinst logik
-        if (playerHasWon() !== false){
-            playerTxt.innerHTML = ` <h2 class="message"> Grattis Spelare ${currentPlayer}</h2>`;
+        // kolla om någon har vunnit
+        if (playerHasWon() !== false) {
+            playerTxt.innerHTML = ` <h2 class="message"> Grattis Spelare ${currentPlayer}</h2> <p> Du har vunnit!`;
             winnerIdicator = playerHasWon();
 
             winnerIdicator.map(
-                (box)=> (boxes[box].style.backgroundColor = "#f4d03f"),
-        );
+                (box) => (boxes[box].style.backgroundColor = "#f4d03f")
+            );
 
-        ContainerEl.classList.add('success');
+            ContainerEl.classList.add('success');
         }
+
+        // Kontrollera om det är oavgjort (alla rutor fyllda, men ingen har vunnit)
+        if (clickAmount === 9 && playerHasWon() === false) {
+            playerTxt.innerHTML = "<h2 class='message'>Det blev oavgjort!</h2>";
+            ContainerEl.classList.add('success');
+        }
+
+        // Byt spelare
         currentPlayer = currentPlayer == X_TXT ? O_TXT : X_TXT;
     }
 }
-
 
 // vinst kombinationer
 const winingCombination = [
@@ -73,19 +81,18 @@ function playerHasWon() {
 //starta om spelet
 restartBtn.addEventListener('click', restartGame);
 
-function restartGame(){
+function restartGame() {
     spaces.fill(null);
+    clickAmount = 0; // Återställ klickräknaren
 
     boxes.forEach((box) => {
         box.innerHTML = "";
-        box.style.backgroundColor = ""
-    })
+        box.style.backgroundColor = "";
+    });
 
-    playerTxt.innerHTML = "Tre I Rad"
+    playerTxt.innerHTML = "Tre I Rad";
     currentPlayer = X_TXT;
     ContainerEl.classList.remove("success");
 }
 
 startGame();
-
-//file:///home/alfred/Gymnasiearbete/index.html}
