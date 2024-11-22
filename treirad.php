@@ -1,3 +1,10 @@
+<?php
+
+require_once 'sessioncheck.php';
+require_once 'assets/config/db.php';
+require_once 'assets/functions.php';
+?>
+
 <!DOCTYPE html>
 <html lang ="sv">
     <head>
@@ -9,7 +16,10 @@
         <script defer src="script.js"></script>
         <title> Tre i rad </title>
         </head>
-        <body>
+        <body><div class="stars"></div>
+
+            <p> Ändra uppgifter?: <a href="update.php">uppdatera</a></p>
+            <p> Logga ut?: <a href="logout.php">logga ut</a></p>
     <div class ="container">
 <h1> Tre I Rad</h1>
 <div id="gameboard">

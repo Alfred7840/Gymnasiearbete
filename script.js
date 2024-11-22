@@ -81,6 +81,8 @@ function playerHasWon() {
     return false;
 }
 
+
+
 //starta om spelet
 restartBtn.addEventListener('click', restartGame);
 
@@ -97,5 +99,30 @@ function restartGame() {
     currentPlayer = X_TXT;
     ContainerEl.classList.remove("success");
 }
+
+// AJAX function to send the game result (win, loss, tie) to PHP
+/*function updateGameStats(result) {
+    // Create a new XMLHttpRequest object
+    const xhr = new XMLHttpRequest();
+    
+    // Define the request type and URL
+    xhr.open('POST', 'update_game_stats.php', true);
+    
+    // Set the request header for sending form data
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    
+    // Define the data to send
+    xhr.send('result=' + result);
+    
+    // Optional: Handle the response (e.g., display a success message or log)
+    xhr.onload = function() {
+        if (xhr.status == 200) {
+            console.log('Game stats updated successfully');
+        } else {
+            console.error('Error updating game stats');
+        }
+    };
+}
+*/
 
 startGame();
