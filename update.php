@@ -4,7 +4,7 @@ require_once 'sessioncheck.php';
 require_once 'assets/config/db.php';
 require_once 'assets/functions.php';
 
-print_r($_SESSION);
+
 
 if (isset($_POST["submit"])) {
     $_SESSION['password'] = $_POST['password'];
@@ -14,7 +14,8 @@ if (isset($_POST["submit"])) {
 
 
 }
-echo "APA";
+
+
 $records = getUserinfo($tre_i_rad, $_SESSION);
 
 

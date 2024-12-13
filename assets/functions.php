@@ -138,7 +138,11 @@ $stmt->bindValue(':username', $info['username']);
 $stmt->bindValue('password', $info['password']);
 $stmt->bindValue('email', $info['email']);
 
-    $sql = "select * from user WHERE username=:username"; 
+return $stmt->execute();
+
+
+
+//$sql = "select * from user WHERE username=:username"; 
 
 $stmt=$tre_i_rad->prepare($sql);
 //$stmt->bindValue('username', $info['username']);
@@ -149,18 +153,12 @@ if ($records) {
     $_SESSION['tie'] = $records['tie'];
     $_SESSION['played_games'] = $records['played_games'];
 }
-if($stmt-> execute()){
-    return true;
-    }
-    else {
-    return false;
-    }
+
 }
 
 
 function getUserinfo($tre_i_rad, $info) {
     $sql = "select * from user WHERE username=:username"; 
-print_r($info);
     $stmt=$tre_i_rad->prepare($sql);
     $stmt->bindValue('username', $info['username']);
     $records = getUserscore($tre_i_rad, $info);  // Pass the required arguments
@@ -174,8 +172,8 @@ print_r($info);
     // Redirect or display success message
     if ($stmt->execute()) {
         // Redirect or display success message
-        header("Location: treirad.php");
-        exit();
+        // header("Location: treirad.php");
+        // exit();
     } 
     
     // If needed, you can still return the prepared statement here (but this logic might need clarification)
@@ -196,5 +194,27 @@ function getUserscore($tre_i_rad, $info) {
 }
 function validateUsername($username) {
     // Allow only letters, numbers, and underscores
-    return preg_match('/^[a-öA-Ö0-9_]+$/', $username);
+    return preg_match('/^[a-öA-Ö0-9_]+$/', $username);    
 }
+
+function createGame($playerX, $playerO) {
+    global $db; // Assuming $db is the database connection from db.php
+    $stmt = $db->prepare("INSERT INTO games (player_x, player_o) VALUES (?, ?)");
+    $stmt->bind_param("ii", $playerX, $playerO);
+    return $stmt->execute();
+}
+
+function updateGame($gameId, $boardState, $currentPlayer) {
+    global $db;
+    $stmt = $db->prepare("UPDATE games SET board_state = ?, current_player = ? WHERE game_id = ?");
+    $stmt->bind_param("ssi", $boardState, $currentPlayer, $gameId);
+    return $stmt->execute();
+}
+function getGameState($gameId) {
+    global $db;
+    $stmt = $db->prepare("SELECT * FROM games WHERE game_id = ?");
+    $stmt->bind_param("i", $gameId);
+    $stmt->execute();
+    return $stmt->get_result()->fetch_assoc();
+}
+

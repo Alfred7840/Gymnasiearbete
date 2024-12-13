@@ -33,7 +33,7 @@ $errors[] = 'Kontrollera användarnamn och lösenord';
                        $_SESSION['tie'] = $records['tie'];
                        $_SESSION['played_games'] = $records['played_games'];
                    }
-        header('Location: treirad.php');
+        header('Location: main_menu.php');
     }
 }
 ?>

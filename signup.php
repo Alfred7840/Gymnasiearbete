@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
             }
 
             // Redirect or display success message
-            header("Location: treirad.php");
+            header("Location: main_menu.php");
             exit();
         }
     }
@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
 <link rel="stylesheet" href="signupstyle.css">
 <html lang="sv"> 
 <head> 
-<link href="css/forum.css" rel="stylesheet" type="text/css">
+<link href="treirad.css" rel="stylesheet" type="text/css">
 <meta charset="utf-8">
 <title>Formulär för signup</title>
 <p> Har du konto?: <a href="index.php">Logga in</a></p>
@@ -53,7 +53,7 @@ if($error){
     echo "<h1> Kontrollera användarnamnet och mail, inga special tecken tillåts.</h1>";
 }
     ?>
-<h1>Registrera Dig</h1>
+<h3>Registrera Dig</h3>
 <form action="signup.php" method="post">
   <fieldset class="registrera">
     <legend>Fyll i här nedan:</legend>
