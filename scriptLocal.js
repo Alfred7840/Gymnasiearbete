@@ -39,6 +39,9 @@ function boxClicked(e) {
        e.target.innerText = currentPlayer;
        clickAmount++;
 
+       ///sendMsg();
+       console.log("PAP");
+
 
        // kolla om någon har vunnit
        if (playerHasWon() !== false) {

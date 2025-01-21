@@ -33,7 +33,7 @@ require_once 'assets/functions.php';
 
        <div class="button-container">
         <!-- Button to play with Robot -->
-       <a href="tirMultiplayer.php"><div id="play-multiplayer" class="icon-button"><i class="fas fa-users"></i> Spela online</div> </a>
+       <a href="test/tirMultiplayer.php"><div id="play-multiplayer" class="icon-button"><i class="fas fa-users"></i> Spela online</div> </a>
         </button>
     </div>
 </body>
