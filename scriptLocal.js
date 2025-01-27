@@ -39,8 +39,8 @@ function boxClicked(e) {
        e.target.innerText = currentPlayer;
        clickAmount++;
 
-       ///sendMsg();
-       console.log("PAP");
+       //sendMsg();
+///       console.log("PAP");
 
 
        // kolla om någon har vunnit
@@ -123,8 +123,5 @@ function restartGame() {
    currentPlayer = X_TXT;
    ContainerEl.classList.remove("success");
 }
-
-
-
 
 startGame();
